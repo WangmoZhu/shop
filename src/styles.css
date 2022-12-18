@@ -1,0 +1,11 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/dist/css/bootstrap.css";
+@import "~@swimlane/ngx-datatable/themes/material.css";
+@import "~@swimlane/ngx-datatable/themes/bootstrap.css";
+@import "~@swimlane/ngx-datatable/themes/dark.css";
+/* @import "~@swimlane/ngx-datatable/assets/app.css"; */
+@import "~@swimlane/ngx-datatable/assets/icons.css";
+
+body {
+  padding-top: 80px;
+}

@@ -1,0 +1,47 @@
+<p>
+  <a routerLink="/admin/products/new" class="btn btn-primary">New Products</a>
+</p>
+<p>
+  <input #query (keyup)="filter(query.value)" type="text" class="form-control" placeholder="Search...">
+</p>
+<ngx-datatable class="material"
+               [rows]="filteredProducts" 
+               [columnMode]="'force'" 
+               [headerHeight]="50" 
+               [footerHeight]="50"
+               rowHeight="auto" 
+               [limit]="10">
+  <ngx-datatable-column name="Title" [width]="300">
+    <ng-template let-value="value" ngx-datatable-cell-template>
+      {{ value }}
+    </ng-template>
+  </ngx-datatable-column>
+  <ngx-datatable-column name="Price" [width]="300">
+    <ng-template let-row="row" let-value="value" ngx-datatable-cell-template>
+      {{ value }}
+    </ng-template>
+  </ngx-datatable-column>
+  <ngx-datatable-column name="" [width]="300">
+    <ng-template let-p="row" ngx-datatable-cell-template>
+      <a [routerLink]="['/admin/products', p.id]">Edit</a>
+    </ng-template>
+  </ngx-datatable-column>
+</ngx-datatable>
+<!-- <table class="table">
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Price</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let p of filteredProducts">
+      <td>{{ p.title }}</td>
+      <td>{{ p.price }}</td>
+      <td>
+        <a [routerLink]="['/admin/products', p.id]">Edit</a>
+      </td>
+    </tr>
+  </tbody>
+</table> -->
